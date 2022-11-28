@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Recigle</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="recipes">Recipes</string>
+    <string name="favorite">Favorite</string>
+    <string name="dummy_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</string>
+    <string name="ai_chef">AI Chef</string>
+</resources>
