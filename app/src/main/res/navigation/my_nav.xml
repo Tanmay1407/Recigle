@@ -9,15 +9,48 @@
         android:id="@+id/recipesFragment"
         android:name="com.patel.tanmay.recigle.ui.fragments.recipes.RecipesFragment"
         android:label="Recipes"
-        tools:layout="@layout/fragment_recipes" />
+        tools:layout="@layout/fragment_recipes" >
+        <action
+            android:id="@+id/action_recipesFragment_to_recipesBottomSheet"
+            app:destination="@id/recipesBottomSheet" />
+        <argument
+            android:name="backFromBottomSheet"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <action
+            android:id="@+id/action_recipesFragment_to_detailsActivity"
+            app:destination="@id/detailsActivity" />
+    </fragment>
     <fragment
         android:id="@+id/favoriteFragment"
         android:name="com.patel.tanmay.recigle.ui.fragments.favorites.FavoriteFragment"
         android:label="Favorites"
-        tools:layout="@layout/fragment_favorite" />
+        tools:layout="@layout/fragment_favorite" >
+        <action
+            android:id="@+id/action_favoriteFragment_to_detailsActivity"
+            app:destination="@id/detailsActivity" />
+    </fragment>
     <fragment
         android:id="@+id/foodJokeFragment"
         android:name="com.patel.tanmay.recigle.ui.fragments.aichef.AIChefFragment"
         android:label="AI Chef"
         tools:layout="@layout/ai_chef_joke" />
+    <dialog
+        android:id="@+id/recipesBottomSheet"
+        android:name="com.patel.tanmay.recigle.ui.fragments.recipes.bottomsheet.RecipesBottomSheet"
+        android:label="recipes_bottom_sheet"
+        tools:layout="@layout/recipes_bottom_sheet" >
+        <action
+            android:id="@+id/action_recipesBottomSheet_to_recipesFragment"
+            app:destination="@id/recipesFragment" />
+    </dialog>
+    <activity
+        android:id="@+id/detailsActivity"
+        android:name="com.patel.tanmay.recigle.ui.DetailsActivity"
+        android:label="Details"
+        tools:layout="@layout/activity_details" >
+        <argument
+            android:name="result"
+            app:argType="com.patel.tanmay.recigle.models.Result" />
+    </activity>
 </navigation>

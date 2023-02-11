@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EA</color>
-    <color name="colorPrimaryDark">#5502C8</color>
+    <color name="colorPrimary">#911F27</color>
+    <color name="colorPrimaryDark">#911F27</color>
     <color name="colorAccent">#9D46FF</color>
 
     <color name="white">#FFFFFF</color>
@@ -15,4 +15,22 @@
     <color name="red">#FF4646</color>
     <color name="yellow">#FFC114</color>
     <color name="green">#00C980</color>
+
+    //Custom chip colors
+    <color name="checkedChipBgColor">#206200EA</color>
+    <color name="chipBgColor">@color/lightGray</color>
+    <color name="checkedChipTextColor">@color/colorPrimary</color>
+    <color name="chipTextColor">@color/darkGray</color>
+    
+    <color name="actionBarBackgroundColor">@color/colorPrimary</color>
+    <color name="strokeColor">@color/lightMediumGray</color>
+    <color name="card_background_color">@color/white</color>
+    <color name="title_color">@color/darker</color>
+
+    <color name="statusBarColor">@color/colorPrimaryDark</color>
+    <color name="contextualStatusBarColor">@color/darker</color>
+    <color name="contextualActionBarColor">@color/dark</color>
+    
+    <color name="cardBackgroundLightColor">#106200EA</color>
+    
 </resources>

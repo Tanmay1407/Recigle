@@ -17,6 +17,7 @@ private lateinit var navController: NavController
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(R.style.Theme_Recigle)
         setContentView(R.layout.activity_main)
 
         // setting the navController which follow the -> nav graph(my_nav)

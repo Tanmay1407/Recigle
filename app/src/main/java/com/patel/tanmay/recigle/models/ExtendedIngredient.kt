@@ -1,8 +1,11 @@
 package com.patel.tanmay.recigle.models
 
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class ExtendedIngredient(
     @SerializedName("amount")
     val amount: Double,
@@ -13,5 +16,8 @@ data class ExtendedIngredient(
     @SerializedName("name")
     val name: String,
     @SerializedName("unit")
-    val unit: String
-)
+    val unit: String,
+//    @SerializedName("original")
+//    val original: String
+
+) : Parcelable

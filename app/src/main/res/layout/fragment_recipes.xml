@@ -1,67 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/lightGray"
-    tools:context=".ui.fragments.recipes.RecipesFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <com.todkars.shimmer.ShimmerRecyclerView
-        android:id="@+id/recipe_recyclerView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:shimmer_recycler_item_count="3"
-        app:shimmer_recycler_layout="@layout/placeholder_row_layout"
-        android:layout_marginHorizontal="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-         />
+    <data>
+        <variable
+            name="mainViewModel"
+            type="com.patel.tanmay.recigle.viewmodels.MainViewModel" />
+    </data>
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/lightGray"
+        tools:context=".ui.fragments.recipes.RecipesFragment">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="24dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:src="@drawable/ic_restaurant"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:tint="@color/white"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageView
-        android:visibility="invisible"
-        android:id="@+id/error_imageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:alpha="0.5"
-        android:src="@drawable/ic_sad"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.37" />
-
-    <TextView
-        android:visibility="invisible"
-        android:id="@+id/error_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:alpha="0.5"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:text="No Internet Connection"
-        app:layout_constraintEnd_toEndOf="@+id/error_imageView"
-        app:layout_constraintStart_toStartOf="@+id/error_imageView"
-        app:layout_constraintTop_toBottomOf="@+id/error_imageView" />
+        <com.todkars.shimmer.ShimmerRecyclerView
+            android:id="@+id/recipe_recyclerView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:shimmer_recycler_item_count="3"
+            app:shimmer_recycler_layout="@layout/placeholder_row_layout"
+            android:layout_marginHorizontal="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/recipes_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_restaurant"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="@color/white"
+            app:backgroundTint="@color/colorPrimary"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageView
+            android:visibility="invisible"
+            android:id="@+id/error_imageView"
+            apiResponse="@{mainViewModel.recipesResponse}"
+            readDatabase="@{mainViewModel.readRecipes}"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:alpha="0.5"
+            android:src="@drawable/ic_sad"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.37" />
+
+        <TextView
+            android:visibility="invisible"
+            android:id="@+id/error_textView"
+            readDatabase_2="@{mainViewModel.readRecipes}"
+            apiResponse_2="@{mainViewModel.recipesResponse}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:alpha="0.5"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:text="No Internet Connection"
+            app:layout_constraintEnd_toEndOf="@+id/error_imageView"
+            app:layout_constraintStart_toStartOf="@+id/error_imageView"
+            app:layout_constraintTop_toBottomOf="@+id/error_imageView" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
